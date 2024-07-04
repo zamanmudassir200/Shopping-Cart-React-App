@@ -12,10 +12,10 @@ const Cart = () => {
   console.log(cart, totalCart);
 
   return (
-    <div className="flex justify-center sm:flex-row flex-col items-start">
+    <div className="flex justify-center sm:flex-row flex-col px-10 items-start">
       {cart && cart.length ? (
         <>
-          <div className="min-h-[80vh] grid md:grid-cols-2 max-w-6xl mx-auto ">
+          <div className="min-h-[20vh] grid md:grid-cols-2 max-w-6xl mx-auto ">
             <div className="flex flex-col justify-center items-center p-3">
               {cart.map((cartItem) => (
                 <CartTile cartItem={cartItem} />
