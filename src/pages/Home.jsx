@@ -26,15 +26,15 @@ const Home = () => {
   }, []);
   if (loading) {
     return (
-      <div className="h-[calc(100vh-70px)] flex w-full justify-center items-center">
+      <div className="h-[calc(100vh-100px)] flex w-full justify-center items-center">
         <Circles height={"60"} width={"60"} color={"red"} visible={true} />
       </div>
     );
   }
   if (errMsg !== null) {
     return (
-      <div className="">
-        Error occured! <span>{errMsg}</span>
+      <div className="flex h-[calc(100vh-100px)] font-bold text-xl items-center justify-center ">
+        Error occured! <span className="px-1 text-red-600"> {errMsg} </span>
       </div>
     );
   }

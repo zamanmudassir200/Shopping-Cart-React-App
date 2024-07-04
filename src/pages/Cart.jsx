@@ -18,26 +18,21 @@ const Cart = () => {
           <div className="min-h-[20vh] grid md:grid-cols-2 max-w-6xl mx-auto ">
             <div className="flex flex-col justify-center items-center p-3">
               {cart.map((cartItem) => (
-                <CartTile cartItem={cartItem} />
+                <CartTile key={cartItem.id} cartItem={cartItem} />
               ))}
             </div>
           </div>
-          <div className="">
-            <div className="flex flex-col justify-center items-end p-5 space-y-5 mt-14">
-              <h1 className="font-bold text-2xl text-red-800">
-                Your Cart Summary
-              </h1>
-              <p className="text-gray-800 text-xl font-bold">
-                <span className="text-gray-800 text-xl font-bold">
-                  Total Items
-                </span>
-                <span>: {cart.length}</span>
-              </p>
-              <p className="text-gray-800 font-bold text-xl">
-                <span className="text-gray-800 font-bold">Total Amount</span>
-                <span>: {Math.floor(totalCart)} Rs</span>
-              </p>
+          <div className="flex  flex-col justify-center items-center p-5 gap-5 ">
+            <h1 className="self-start font-bold text-xl text-red-800">
+              Your Cart Summary
+            </h1>
+            <div className="bg-red-200 p-2 rounded-lg flex flex-col gap-2 text-gray-800 text-xl font-bold">
+              <span> Total Items: {cart.length}</span>
+              <span className="text-gray-800 font-bold">
+                Total Amount: {Math.floor(totalCart)} Rs
+              </span>
             </div>
+            <p className="text-gray-800 font-bold text-xl"></p>
           </div>
         </>
       ) : (
